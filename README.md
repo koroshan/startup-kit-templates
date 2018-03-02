@@ -181,7 +181,7 @@ New services are not immediately available in all AWS Regions, please consult th
 
 <details>
 	<summary>Basic Infrastructure Templates (VPC etc)</summary>
-CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
+| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  ||||
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion] | US East (N. Virginia) | us-east-1 | ✅  | ✅ |||
@@ -217,7 +217,7 @@ CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic B
 
 <details>
 	<summary>AWS Elastic Beanstalk</summary>
-CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
+| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-eb-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  || ✅   |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion-eb-rds] | US East (Ohio) | us-east-2 | ✅  | ✅  | ✅  || ✅   |
@@ -238,7 +238,7 @@ CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic B
 
 <details>
 	<summary>AWS Fargate</summary>
-CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
+| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  ||
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  ||

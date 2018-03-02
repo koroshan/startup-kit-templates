@@ -265,7 +265,7 @@ New services are not immediately available in all AWS Regions, please consult th
 <summary>AWS Fargate</summary>
 
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate
-:---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
+:---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- 
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  |
 

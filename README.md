@@ -181,6 +181,7 @@ New services are not immediately available in all AWS Regions, please consult th
 
 <details>
 <summary>Basic Infrastructure Templates (VPC etc)</summary>
+
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  ||||
@@ -212,11 +213,11 @@ New services are not immediately available in all AWS Regions, please consult th
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  ||||
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅ |||
 
-
 </details>
 
 <details>
 <summary>AWS Elastic Beanstalk</summary>
+
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-eb-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  || ✅   |
@@ -234,14 +235,17 @@ New services are not immediately available in all AWS Regions, please consult th
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion-eb-rds] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅  | ✅  || ✅   |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion-eb-rds] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅  | ✅  || ✅   |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion-eb-rds] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅  | ✅  || ✅   |
+
 </details>
 
 <details>
 <summary>AWS Fargate</summary>
+
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  ||
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  ||
+
 </details>
 
 [us-east-1-vpc]: https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/awslabs-startup-kit-templates-deploy-v1/vpc.cfn.yml

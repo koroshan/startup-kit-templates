@@ -205,69 +205,69 @@ New services are not immediately available in all AWS Regions, please consult th
 <details>
 <summary>Basic Infrastructure Templates (VPC etc)</summary>
 
-| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
-:---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion] | US East (N. Virginia) | us-east-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc] | US East (Ohio) | us-east-2 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion] | US East (Ohio) | us-east-2 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc] | US West (N. California) | us-west-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion] | US West (N. California) | us-west-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc] | Canada (Central) | ca-central-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion] | Canada (Central) | ca-central-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc] | S. America (São Paulo) | sa-east-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion] | S. America (São Paulo) | sa-east-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc] | EU (Ireland) | eu-west-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion] | EU (Ireland) | eu-west-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc] | EU (London) | eu-west-2 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion] | EU (London) | eu-west-2 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc] | EU (Paris) | eu-west-3 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion] | EU (Paris) | eu-west-3 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc] | EU (Frankfurt) | eu-central-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion] | EU (Frankfurt) | eu-central-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc] | Asia Pacific (Mumbai) | ap-south-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅ |||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  ||||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅ |||
+| CloudFormation | Region Name | Region | VPC | Bastion
+:---: | ------------ | ------------- | ------------- | ------------- 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion] | US East (N. Virginia) | us-east-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc] | US East (Ohio) | us-east-2 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion] | US East (Ohio) | us-east-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc] | US West (N. California) | us-west-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion] | US West (N. California) | us-west-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc] | Canada (Central) | ca-central-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion] | Canada (Central) | ca-central-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc] | S. America (São Paulo) | sa-east-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion] | S. America (São Paulo) | sa-east-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc] | EU (Ireland) | eu-west-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion] | EU (Ireland) | eu-west-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc] | EU (London) | eu-west-2 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion] | EU (London) | eu-west-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc] | EU (Paris) | eu-west-3 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion] | EU (Paris) | eu-west-3 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc] | EU (Frankfurt) | eu-central-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion] | EU (Frankfurt) | eu-central-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc] | Asia Pacific (Mumbai) | ap-south-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅
 
 </details>
 
 <details>
 <summary>AWS Elastic Beanstalk</summary>
 
-| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
-:---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-eb-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion-eb-rds] | US East (Ohio) | us-east-2 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion-eb-rds] | US West (N. California) | us-west-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-2-vpc-bastion-eb-rds] | US West (Oregon) | us-west-2 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion-eb-rds] | Canada (Central) | ca-central-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion-eb-rds] | S. America (São Paulo) | sa-east-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion-eb-rds] | EU (Ireland) | eu-west-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion-eb-rds] | EU (London) | eu-west-2 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion-eb-rds] | EU (Paris) | eu-west-3 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion-eb-rds] | EU (Frankfurt) | eu-central-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion-eb-rds] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion-eb-rds] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion-eb-rds] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion-eb-rds] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅  | ✅  || ✅   |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion-eb-rds] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅  | ✅  || ✅   |
+| CloudFormation | Region Name | Region | VPC | Bastion | DB | Elastic Beanstalk
+:---: | ------------ | ------------- | ------------- | ------------- | -------------  | -------------
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-eb-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion-eb-rds] | US East (Ohio) | us-east-2 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion-eb-rds] | US West (N. California) | us-west-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-2-vpc-bastion-eb-rds] | US West (Oregon) | us-west-2 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion-eb-rds] | Canada (Central) | ca-central-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion-eb-rds] | S. America (São Paulo) | sa-east-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion-eb-rds] | EU (Ireland) | eu-west-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion-eb-rds] | EU (London) | eu-west-2 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion-eb-rds] | EU (Paris) | eu-west-3 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion-eb-rds] | EU (Frankfurt) | eu-central-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion-eb-rds] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion-eb-rds] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion-eb-rds] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion-eb-rds] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅  | ✅  | ✅   |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion-eb-rds] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅  | ✅  | ✅   |
 
 </details>
 
 <details>
 <summary>AWS Fargate</summary>
 
-| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
+| CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  ||
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  ||
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  |
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  |
 
 </details>
 

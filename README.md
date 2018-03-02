@@ -203,7 +203,7 @@ Click a row's "Launch stack" button to launch a single stack in the specified re
 New services are not immediately available in all AWS Regions, please consult the [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) for more information.
 
 <details>
-	<summary>Basic Infrastructure Templates (VPC etc)</summary>
+<summary>Basic Infrastructure Templates (VPC etc)</summary>
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  ||||
@@ -239,7 +239,7 @@ New services are not immediately available in all AWS Regions, please consult th
 </details>
 
 <details>
-	<summary>AWS Elastic Beanstalk</summary>
+<summary>AWS Elastic Beanstalk</summary>
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-eb-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  || ✅   |
@@ -260,7 +260,7 @@ New services are not immediately available in all AWS Regions, please consult th
 </details>
 
 <details>
-	<summary>AWS Fargate</summary>
+<summary>AWS Fargate</summary>
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate | Elastic Beanstalk
 :---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  ||

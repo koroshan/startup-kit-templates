@@ -2,7 +2,7 @@
 
 The StartupKit-templates repo contains a collection of AWS [CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) templates intended to help you set up common pieces of AWS infrastructure. Each template defines a [stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html), which is a collection of related resources that can be created, updated, or deleted as a single unit. Templates are available for creating:
 
-- A secure network inside a [VPC](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) [jump](#vpc)
+- A secure network inside a [VPC](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) ([jump](#vpc))
 - A [bastion host](https://en.wikipedia.org/wiki/Bastion_host) to securely access instances inside the VPC
 - A deployment environment using [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
 - A container-based environment using [Amazon Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html)
@@ -41,8 +41,7 @@ Each section contains details about template parameters and the resources create
 - [billing.cfn.yml](#billing)
 
 
-<a name="vpc"></a>
-### (#VPC)
+### VPC
 
 The **_vpc.cfn.yml_** template is a prerequisite for most of the others--you need to either run it first, or run one of the wrapper templates at the top level of the repo, which include it. It creates a private networking environment in which you can securely run AWS resources, along with related networking resources.
 

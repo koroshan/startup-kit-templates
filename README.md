@@ -64,6 +64,7 @@ Security groups act as firewalls at the instance level, to control inbound and o
 - 1 [NAT gateway](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html)
 - 3 [route tables](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html)
 - A bunch of [security groups](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Security.html).
+
 </details>
 
 
@@ -77,7 +78,8 @@ EC2 key pairs are required to ssh into any EC2 instance, including bastion hosts
 
 With MFA enabled you use an app like Google Authenticator or Authy to obtain a one-time password, and use this when logging in, in addition to your username and key pair.
 
-The **_bastion.cfn.yml_** template creates:
+<details>
+	<summary>Resources Created</summary>
 
 - A t2.micro EC2 instance
 - An [Elastic IP Address (EIP)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
@@ -86,6 +88,8 @@ The **_bastion.cfn.yml_** template creates:
 - [Cloudwatch alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) for:
   - Three login attempts with invalid username occur within one minute
   - Fifteen login attempts with either an invalid key or invalid username occur within five minutes
+
+</details>
 
 You can also set how long CloudWatch logs are retained, and optionally enable [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), among other options.
 
@@ -103,7 +107,8 @@ The **_elastic-beanstalk.cfn.yml_** template asks for a series of inputs definin
 - A stack type, with allowed values of node, rails, python, python3 or spring.
 - An environment name with allowed values  of dev or prod.
 
-It creates:
+<details>
+	<summary>Resources Created</summary>
 
 - A service role
 - An Elastic Beanstalk application
@@ -112,12 +117,14 @@ It creates:
 - A Load Balancer
 - Related IAM [Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and [Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
+</details>
 
 ### AWS Fargate
 
 [AWS Fargate](https://aws.amazon.com/fargate/) is part of [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs/). It's a managed service for running container-based applications, without having to worry about the underlying servers--sort of like [Lambda](https://aws.amazon.com/lambda/) for containers.
 
-The **_fargate.cfn.yml_** template creates:
+<details>
+	<summary>Resources Created</summary>
 
 - An S3 bucket for the container
 - An S3 bucket for CodePipeline artifacts
@@ -130,27 +137,32 @@ The **_fargate.cfn.yml_** template creates:
 - A [Fargate task definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definition.html)
 - A Fargate service with associated scaling resources
 
+</details>
 
 ### Amazon RDS
 
 [Amazon Relational Database Service (RDS)](https://aws.amazon.com/rds/) is a service for running relational databases without having to manage the server software, backups, or other maintenance tasks. The RDS service as a whole supports Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle, and Microsoft SQL Server; this template currently works with PostgreSQL, MySQL, and MariaDB, and supports t2, m4, and r4 [instance types](https://aws.amazon.com/rds/instance-types/).
 
-The **_db.cfn.yml_** template creates:
+<details>
+	<summary>Resources Created</summary>
 
 - A DB instance
 - A DB subnet group
 
+</details>
 
 ### Amazon Aurora
 
 Amazon Aurora is a high-performance cloud-optimized relational database, which is compatible with MySQL and PostgreSQL. It’s treated separately than RDS because Aurora has a few unique characteristics.
 
-The **_aurora.cfn.yml_** template creates:
+<details>
+	<summary>Resources Created</summary>
 
 - An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
 - An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
 - A DB subnet group
 
+</details>
 
 ### Billing Alerts
 

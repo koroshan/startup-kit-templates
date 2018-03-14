@@ -5,7 +5,7 @@ The StartupKit-templates repo contains a collection of AWS [CloudFormation](http
 - A secure network inside a [VPC](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) ([jump](#vpc))
 - A [bastion host](https://en.wikipedia.org/wiki/Bastion_host) to securely access instances inside the VPC ([jump](#bastion-host))
 - A deployment environment using [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) ([jump](#aws-elastic-beanstalk))
-- A container-based environment using [Amazon Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html) ([jump](#aws-fargate))
+- A container-based environment using [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html) ([jump](#aws-fargate))
 - A relational database using [Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) ([jump](#amazon-rds))
 - An [Amazon Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html) DB cluster ([jump](#amazon-aurora))
 - An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)

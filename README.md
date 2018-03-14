@@ -3,12 +3,12 @@
 The StartupKit-templates repo contains a collection of AWS [CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) templates intended to help you set up common pieces of AWS infrastructure. Each template defines a [stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html), which is a collection of related resources that can be created, updated, or deleted as a single unit. Templates are available for creating:
 
 - A secure network inside a [VPC](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) ([jump](#vpc))
-- A [bastion host](https://en.wikipedia.org/wiki/Bastion_host) to securely access instances inside the VPC
-- A deployment environment using [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html)
-- A container-based environment using [Amazon Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html)
-- A relational database using [Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
-- An [Amazon Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html) DB cluster
-- [Billing alerts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html) for your account
+- A [bastion host](https://en.wikipedia.org/wiki/Bastion_host) to securely access instances inside the VPC ([jump](#bastion-host))
+- A deployment environment using [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) ([jump](#aws-elastic-beanstalk))
+- A container-based environment using [Amazon Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html) ([jump](#aws-fargate))
+- A relational database using [Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) ([jump](#amazon-rds))
+- An [Amazon Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html) DB cluster ([jump](#amazon-aurora))
+- [Billing alerts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html) for your account ([jump](#billing-alerts))
 
 The VPC template is a requirement for the others. You can either run the templates/vpc.cfn.yml template by itself prior to using the others, or run any one of the vpc-*.cfn.yml wrapper templates at the top level of this repo to create sets of resources. For example, vpc-bastion-fargate-rds.cfn.yml will create a single stack containing a vpc, bastion host, fargate cluster, and database.
 
@@ -25,7 +25,7 @@ If you haven't already done so you first need to:
 ## Creating stacks
 Use the AWS [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home) to run the templates. Click the "Create Stack" button in the upper left corner of the console, then under "Choose a template", select "Upload a template to Amazon S3" and click "Browse" to find your local fork of this repository and choose the template you want to run.
 
-To launch stacks directly directly from this README see the [table below](#launch-table).
+To launch stacks directly directly from this README see the [table below](#launch-stack).
 
 
 ## The templates
@@ -33,12 +33,12 @@ To launch stacks directly directly from this README see the [table below](#launc
 Each section contains details about template parameters and the resources created by the stack.
 
 - [vpc.cfn.yml](#vpc)
-- [bastion.cfn.yml](#bastion)
-- [elastic-beanstalk.cfn.yml](#eb)
-- [fargate.cfn.yml](#fargate)
-- [db.cfn.yml](#db)
-- [aurora.cfn.yml](#aurora)
-- [billing.cfn.yml](#billing)
+- [bastion.cfn.yml](#bastion-host)
+- [elastic-beanstalk.cfn.yml](#aws-elastic-beanstalk)
+- [fargate.cfn.yml](#aws-fargate)
+- [db.cfn.yml](#amazon-rds)
+- [aurora.cfn.yml](#amazon-aurora)
+- [billing.cfn.yml](#billing-alerts)
 
 
 ### VPC
@@ -67,7 +67,6 @@ Security groups act as firewalls at the instance level, to control inbound and o
 </details
 
 
-<a name="bastion"></a>
 ### Bastion host
 
 It's preferable not to ssh into EC2 instances at all, instead monitoring instances by configuring them to send logs to [CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html) or other services, and managing instantiation, configuration, and termination of instances using devops tools.
@@ -95,8 +94,7 @@ The bastion template is dependent on having previously run the VPC template--whe
 For security and cost optimization it's best practice to stop (not terminate!) the bastion host when not in use.
 
 
-<a name="eb"></a>
-### Elastic Beanstalk
+### AWS Elastic Beanstalk
 
 AWS Elastic Beanstalk is a service that lets you define an environment for common application types, and deploy code into it. The Beanstalk template is dependent on the VPC, and optionally can be used with the bastion, RDS, or Aurora templates.
 
@@ -115,8 +113,7 @@ It creates:
 - Related IAM [Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and [Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
 
-<a name="fargate"></a>
-### Fargate
+### AWS Fargate
 
 [AWS Fargate](https://aws.amazon.com/fargate/) is part of [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs/). It's a managed service for running container-based applications, without having to worry about the underlying servers--sort of like [Lambda](https://aws.amazon.com/lambda/) for containers.
 
@@ -134,8 +131,7 @@ The **_fargate.cfn.yml_** template creates:
 - A Fargate service with associated scaling resources
 
 
-<a name="db"></a>
-### RDS
+### Amazon RDS
 
 [Amazon Relational Database Service (RDS)](https://aws.amazon.com/rds/) is a service for running relational databases without having to manage the server software, backups, or other maintenance tasks. The RDS service as a whole supports Amazon Aurora, PostgreSQL, MySQL, MariaDB, Oracle, and Microsoft SQL Server; this template currently works with PostgreSQL, MySQL, and MariaDB, and supports t2, m4, and r4 [instance types](https://aws.amazon.com/rds/instance-types/).
 
@@ -145,8 +141,7 @@ The **_db.cfn.yml_** template creates:
 - A DB subnet group
 
 
-<a href="aurora"></a>
-### Aurora
+### Amazon Aurora
 
 Amazon Aurora is a high-performance cloud-optimized relational database, which is compatible with MySQL and PostgreSQL. It’s treated separately than RDS because Aurora has a few unique characteristics.
 
@@ -157,7 +152,6 @@ The **_aurora.cfn.yml_** template creates:
 - A DB subnet group
 
 
-<a href="billing"></a>
 ### Billing Alerts
 
 If you leave AWS resources running longer than intended, have unexpected traffic levels, or misconfigure or over provision resources, your bill can climb higher or faster than expected. To avoid surprises we recommend turning on billing alerts, so that you're notified when charges go above preconfigured thresholds. The billing_alert template makes this easier.
@@ -173,8 +167,6 @@ Now you can run the billing_alert.cfn.yml template, which will create a [CloudWa
 You can read about more [ways to avoid unexpected charges](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/checklistforunwantedcharges.html).
 
 
-
-<a name="launch-table"></a>
 ### Launch stack
 
 Click a row's "Launch stack" button to launch a single stack in the specified region containing all the resources in the checked templates.

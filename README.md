@@ -76,6 +76,12 @@ EC2 key pairs are required to ssh into any EC2 instance, including bastion hosts
 
 With MFA enabled you use an app like Google Authenticator or Authy to obtain a one-time password, and use this when logging in, in addition to your username and key pair.
 
+You can also set how long CloudWatch logs are retained, and optionally enable [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), among other options.
+
+The bastion template is dependent on having previously run the VPC template--when you run the bastion template you're required to enter the name of the VPC created by the VPC template. Once the bastion stack has been created, you can log into the [EC2 section of the console](https://console.aws.amazon.com/ec2), find the EC2 instance containing the stack name, copy its public DNS address, and [ssh into it](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html). One on the bastion host you should be able to reach all AWS resources running in the same VPC.
+
+For security and cost optimization it's best practice to stop (not terminate!) the bastion host when not in use.
+
 <details>
 	<summary>Resources Created</summary>
 
@@ -88,13 +94,6 @@ With MFA enabled you use an app like Google Authenticator or Authy to obtain a o
   - Fifteen login attempts with either an invalid key or invalid username occur within five minutes
 
 </details>
-
-You can also set how long CloudWatch logs are retained, and optionally enable [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), among other options.
-
-The bastion template is dependent on having previously run the VPC template--when you run the bastion template you're required to enter the name of the VPC created by the VPC template. Once the bastion stack has been created, you can log into the [EC2 section of the console](https://console.aws.amazon.com/ec2), find the EC2 instance containing the stack name, copy its public DNS address, and [ssh into it](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html). One on the bastion host you should be able to reach all AWS resources running in the same VPC.
-
-For security and cost optimization it's best practice to stop (not terminate!) the bastion host when not in use.
-
 
 ### AWS Elastic Beanstalk
 

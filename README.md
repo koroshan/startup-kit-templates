@@ -83,6 +83,7 @@ For security and cost optimization it's best practice to stop (not terminate!) t
 
 <details>
 	<summary>Resources Created</summary>
+
   - A t2.micro EC2 instance
   - An [Elastic IP Address (EIP)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
   - An [Elastic Network Interface (ENI)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)
@@ -90,6 +91,7 @@ For security and cost optimization it's best practice to stop (not terminate!) t
   - [Cloudwatch alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) for:
     - Three login attempts with invalid username occur within one minute
     - Fifteen login attempts with either an invalid key or invalid username occur within five minutes
+
 </details>
 
 ### AWS Elastic Beanstalk
@@ -104,12 +106,14 @@ The **_elastic-beanstalk.cfn.yml_** template asks for a series of inputs definin
 
 <details>
 	<summary>Resources Created</summary>
+
   - A service role
   - An Elastic Beanstalk application
   - An Elastic Beanstalk environment
   - An [Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html)
   - A Load Balancer
   - Related IAM [Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and [Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
+
 </details>
 
 ### AWS Fargate
@@ -120,6 +124,7 @@ Creating a Fargate stack requires you to have first created a [VPC](#vpc) stack,
 
 <details>
 	<summary>Resources Created</summary>
+
   - An S3 bucket for the container
   - An S3 bucket for CodePipeline artifacts
   - A [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html) project
@@ -131,6 +136,7 @@ Creating a Fargate stack requires you to have first created a [VPC](#vpc) stack,
   - ELB target groups stuff
   - A [Fargate task definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definition.html)
   - A Fargate service with associated scaling resources
+
 </details>
 
 ### Amazon RDS
@@ -141,8 +147,10 @@ Creating an RDS stack requires you to have first created a [VPC](#vpc) stack, an
 
 <details>
 	<summary>Resources Created</summary>
+
   - A DB instance
   - A DB subnet group
+
 </details>
 
 ### Amazon Aurora
@@ -153,9 +161,11 @@ Creating an Aurora stack requires you to have first created a [VPC](#vpc) stack,
 
 <details>
 	<summary>Resources Created</summary>
+
   - An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
   - An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
   - A DB subnet group
+
 </details>
 
 <a href="elasticache"></a>
@@ -167,9 +177,11 @@ Creating an ElastiCache stack requires you to have first created a [VPC](#vpc) s
 
 <details>
 	<summary>Resources Created</summary>
+
   - An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)
   - An ElastiCache subnet group
   - An ElastiCache security group
+
 </details>
 
 ### Billing Alerts

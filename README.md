@@ -62,6 +62,7 @@ Security groups act as firewalls at the instance level, to control inbound and o
 - 1 [NAT gateway](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html)
 - 3 [route tables](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html)
 - A bunch of [security groups](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Security.html).
+
 </details>
 
 
@@ -75,7 +76,8 @@ EC2 key pairs are required to ssh into any EC2 instance, including bastion hosts
 
 With MFA enabled you use an app like Google Authenticator or Authy to obtain a one-time password, and use this when logging in, in addition to your username and key pair.
 
-The **_bastion.cfn.yml_** template creates:
+<details>
+	<summary>Resources Created</summary>
 
 - A t2.micro EC2 instance
 - An [Elastic IP Address (EIP)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
@@ -84,6 +86,8 @@ The **_bastion.cfn.yml_** template creates:
 - [Cloudwatch alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) for:
   - Three login attempts with invalid username occur within one minute
   - Fifteen login attempts with either an invalid key or invalid username occur within five minutes
+
+</details>
 
 You can also set how long CloudWatch logs are retained, and optionally enable [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), among other options.
 
@@ -102,7 +106,8 @@ The **_elastic-beanstalk.cfn.yml_** template asks for a series of inputs definin
 - An environment name with allowed values  of dev or prod.
 - The name of the stack you previously created to define your VPC, as the NetworkStackName parameter.
 
-It creates:
+<details>
+	<summary>Resources Created</summary>
 
 - A service role
 - An Elastic Beanstalk application
@@ -111,12 +116,16 @@ It creates:
 - A Load Balancer
 - Related IAM [Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and [Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html).
 
+</details>
 
 ### AWS Fargate
 
 [AWS Fargate](https://aws.amazon.com/fargate/) is part of [Amazon Elastic Container Service (ECS)](https://aws.amazon.com/ecs/). It's a managed service for running container-based applications, without having to worry about the underlying servers--sort of like [Lambda](https://aws.amazon.com/lambda/) for containers.
 
-The **_fargate.cfn.yml_** template creates:
+Creating a Fargate stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
+
+<details>
+	<summary>Resources Created</summary>
 
 - An S3 bucket for the container
 - An S3 bucket for CodePipeline artifacts
@@ -130,8 +139,7 @@ The **_fargate.cfn.yml_** template creates:
 - A [Fargate task definition](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-task-definition.html)
 - A Fargate service with associated scaling resources
 
-Creating a Fargate stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
-
+</details>
 
 ### Amazon RDS
 
@@ -139,11 +147,11 @@ Creating a Fargate stack requires you to have first created a [VPC](#vpc) stack,
 
 Creating an RDS stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
 
-The **_db.cfn.yml_** template creates:
-
-- A DB instance
-- A DB subnet group
-
+<details>
+	<summary>Resources Created</summary>
+  - A DB instance
+  - A DB subnet group
+</details>
 
 ### Amazon Aurora
 
@@ -151,11 +159,12 @@ Amazon Aurora is a high-performance cloud-optimized relational database, which i
 
 Creating an Aurora stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
 
-The **_aurora.cfn.yml_** template creates:
-
-- An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
-- An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
-- A DB subnet group
+<details>
+	<summary>Resources Created</summary>
+  - An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
+  - An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
+  - A DB subnet group
+</details>
 
 <a href="elasticache"></a>
 ### ElastiCache Cluster
@@ -164,12 +173,12 @@ Amazon ElastiCache is a managed high-performance in-memory data store, backed wi
 
 Creating an ElastiCache stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
 
-The **_elasticache.cfn.yml_** template creates:
-
-- An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)
-- An ElastiCache subnet group
-- An ElastiCache security group
-
+<details>
+	<summary>Resources Created</summary>
+  - An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)
+  - An ElastiCache subnet group
+  - An ElastiCache security group
+</details>
 
 ### Billing Alerts
 
@@ -185,7 +194,6 @@ Now you can run the billing_alert.cfn.yml template, which will create a [CloudWa
 
 You can read about more [ways to avoid unexpected charges](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/checklistforunwantedcharges.html).
 
-
 ### Launch stack
 
 Click a row's "Launch stack" button to launch a single stack in the specified region containing all the resources in the checked templates.
@@ -196,33 +204,33 @@ New services are not immediately available in all AWS Regions, please consult th
 <summary>Basic Infrastructure Templates (VPC etc)</summary>
 
 | CloudFormation | Region Name | Region | VPC | Bastion
-:---: | ------------ | ------------- | ------------- | ------------- 
+:---: | ------------ | ------------- | ------------- | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc] | US East (N. Virginia) | us-east-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion] | US East (N. Virginia) | us-east-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion] | US East (N. Virginia) | us-east-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc] | US East (Ohio) | us-east-2 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion] | US East (Ohio) | us-east-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-2-vpc-bastion] | US East (Ohio) | us-east-2 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc] | US West (N. California) | us-west-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion] | US West (N. California) | us-west-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-west-1-vpc-bastion] | US West (N. California) | us-west-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc] | Canada (Central) | ca-central-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion] | Canada (Central) | ca-central-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ca-central-1-vpc-bastion] | Canada (Central) | ca-central-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc] | S. America (São Paulo) | sa-east-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion] | S. America (São Paulo) | sa-east-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][sa-east-1-vpc-bastion] | S. America (São Paulo) | sa-east-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc] | EU (Ireland) | eu-west-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion] | EU (Ireland) | eu-west-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-1-vpc-bastion] | EU (Ireland) | eu-west-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc] | EU (London) | eu-west-2 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion] | EU (London) | eu-west-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-2-vpc-bastion] | EU (London) | eu-west-2 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc] | EU (Paris) | eu-west-3 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion] | EU (Paris) | eu-west-3 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-west-3-vpc-bastion] | EU (Paris) | eu-west-3 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc] | EU (Frankfurt) | eu-central-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion] | EU (Frankfurt) | eu-central-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][eu-central-1-vpc-bastion] | EU (Frankfurt) | eu-central-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-1-vpc-bastion] | Asia Pacific (Tokyo) | ap-northeast-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-northeast-2-vpc-bastion] | Asia Pacific (Seoul) | ap-northeast-2 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc] | Asia Pacific (Mumbai) | ap-south-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-south-1-vpc-bastion] | Asia Pacific (Mumbai) | ap-south-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  |
-[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅ 
+[<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-1-vpc-bastion] | Asia Pacific (Singapore) | ap-southeast-1 | ✅  | ✅
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][ap-southeast-2-vpc-bastion] | Asia Pacific (Sydney) | ap-southeast-2 | ✅  | ✅
 
@@ -255,7 +263,7 @@ New services are not immediately available in all AWS Regions, please consult th
 <summary>AWS Fargate</summary>
 
 | CloudFormation | Region Name | Region | VPC | Bastion | DB | Fargate
-:---: | ------------ | ------------- | ------------- | ------------- | -------------  | ------------- 
+:---: | ------------ | ------------- | ------------- | ------------- | -------------  | -------------
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate] | US East (N. Virginia) | us-east-1 | ✅  | ✅  || ✅  |
 [<img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" width="150"> ][us-east-1-vpc-bastion-fargate-rds] | US East (N. Virginia) | us-east-1 | ✅  | ✅  | ✅  | ✅  |
 

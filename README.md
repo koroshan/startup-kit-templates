@@ -148,8 +148,8 @@ Creating an RDS stack requires you to have first created a [VPC](#vpc) stack, an
 
 <details>
 	<summary>Resources Created</summary>
-  - A DB instance
-  - A DB subnet group
+- A DB instance
+- A DB subnet group
 </details>
 
 ### Amazon Aurora
@@ -160,9 +160,9 @@ Creating an Aurora stack requires you to have first created a [VPC](#vpc) stack,
 
 <details>
 	<summary>Resources Created</summary>
-  - An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
-  - An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
-  - A DB subnet group
+- An [Aurora DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.CreateInstance.html)
+- An [Aurora DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html)
+- A DB subnet group
 </details>
 
 <a href="elasticache"></a>
@@ -174,9 +174,9 @@ Creating an ElastiCache stack requires you to have first created a [VPC](#vpc) s
 
 <details>
 	<summary>Resources Created</summary>
-  - An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)
-  - An ElastiCache subnet group
-  - An ElastiCache security group
+- An [ElastiCache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/WhatIs.html)
+- An ElastiCache subnet group
+- An ElastiCache security group
 </details>
 
 ### Billing Alerts

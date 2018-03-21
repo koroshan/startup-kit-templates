@@ -54,6 +54,7 @@ Security groups act as firewalls at the instance level, to control inbound and o
 
 <details>
 	<summary>Resources Created</summary>
+
   - 1 [Amazon Virtual Private Cloud](https://aws.amazon.com/vpc/)
   - 2 Public [subnets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html)
   - 2 Private subnets
@@ -61,6 +62,7 @@ Security groups act as firewalls at the instance level, to control inbound and o
   - 1 [NAT gateway](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html)
   - 3 [route tables](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html)
   - A bunch of [security groups](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Security.html).
+
 </details>
 
 ### Bastion Host

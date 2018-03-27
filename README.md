@@ -103,6 +103,8 @@ For security and cost optimization it's best practice to stop (not terminate!) t
 
 AWS Elastic Beanstalk is a service that lets you define an environment for common application types, and deploy code into it. The Beanstalk template is dependent on the VPC, and optionally can be used with the bastion, RDS, or Aurora templates.
 
+Creating a AWS Elastic Beanstalk stack requires you to have first created a [VPC](#vpc) stack, and to enter the name of the VPC stack as the NetworkStackName parameter.
+
 The **_elastic-beanstalk.cfn.yml_** template asks for a series of inputs defining your environment. Those with constrained values are:
 
 - A stack type, with allowed values of node, rails, python, python3 or spring.

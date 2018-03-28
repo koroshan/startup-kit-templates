@@ -75,7 +75,7 @@ It's preferable not to ssh into EC2 instances at all, instead monitoring instanc
 
 If you do need to connect directly to instances, it's best (and for instances in a private subnets, a requirement) to use a bastion host, otherwise known as a jump box. A bastion host is an EC2 instance that is publicly accessible, and also has access to private resources, allowing it to function as a secure go-between. You configure your EC2 instances to only accept ssh traffic from the bastion host, then you can ssh into the bastion host, and from there connect to your private resources.
 
-EC2 key pairs are required to ssh into any EC2 instance, including bastion hosts. If an attacker gains access to your key pair, they can use it to get into your bastion host, and thus your other resources. In order to prevent this kind of breach the bastion host template supports enabling [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), which is highly recommended
+EC2 key pairs are required to ssh into any EC2 instance, including bastion hosts. If an attacker gains access to your key pair, they can use it to get into your bastion host, and thus your other resources. In order to prevent this kind of breach the bastion host template supports enabling [Multi-Factor Authentication (MFA)](https://en.wikipedia.org/wiki/Multi-factor_authentication), which is highly recommended
 
 With MFA enabled you use an app like Google Authenticator or Authy to obtain a one-time password, and use this when logging in, in addition to your username and key pair.
 
@@ -92,7 +92,7 @@ With MFA enabled you use an app like Google Authenticator or Authy to obtain a o
 
 </details>
 
-You can also set how long CloudWatch logs are retained, and optionally enable [Multi-Factor Authentication (MFA)](http://searchsecurity.techtarget.com/definition/multifactor-authentication-MFA), among other options.
+You can also set how long CloudWatch logs are retained, and optionally enable Multi-Factor Authentication, among other options.
 
 The bastion template is dependent on having previously run the VPC template--when you run the bastion template you're required to enter the name of the VPC created by the VPC template. Once the bastion stack has been created, you can log into the [EC2 section of the console](https://console.aws.amazon.com/ec2), find the EC2 instance containing the stack name, copy its public DNS address, and [ssh into it](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html). One on the bastion host you should be able to reach all AWS resources running in the same VPC.
 
